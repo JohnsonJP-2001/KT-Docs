@@ -65,42 +65,74 @@ In the `experimentationJson`, we have three important variables:
 
 ```typescript
 {
+    // list of item has current chart as parent and isInteractAll as true 
     "isInteractAllChildList": string[], 
+    // current chart id
     "chartId": string,
+    // when interaction the child need to clear for that child list send over here
     "childChartList": string[], 
+    // across fields in qpad
     "groupBYParameter": GroupByParameterType[],
+    // view fields in qpad
     "aggregateParameter": ChartYAxisType[],
+    // says which chart is it 
     "chartType": string,
+    // says whether the query is valid 
     "isValid": boolean,
+    // by fields in qpad
     "byCondition": byConditionType[],
+    // contains all/f100/ l100/ range and if any internal filter condition 
     "filter": FilterType,
-    "commonFilter": commonConditionFieldListType[], 
+    // contains the common filter condition
+    "commonFilter": commonConditionFieldListType[],
+    // contains the group by params need to show as date/month/quater/ year and all/date range/ 1 current week/ 2 current week/ 3current week  
     "dateRangeFilter": DateFilterType,
+    // contains the latitude and longitude fields
     "coordinate": coordinateType,
+    // containd one column name/ order_type / datatype
     "sortDetails": chartSortDetailsType[],
+    // contains the aops fields
     "aopsDetails": aopsDetailsType[],
+    // contains the selected fields from view fields in qpad
     "selectedViews": string[],
+    // aops > display field > show list of column details
     "fieldList": displayFieldAopsType[],
+    // gauge chart > properties > target value configuration > **field**/ constant > select field
     "targetFieldName": string, 
+    // used inside filter whether current chart is inclued in common filter or not
     "isCommonFilterApplied": boolean, 
+    // bubble chart > properties > show missing values
     "showNull": boolean, 
+    // grouped reference and trend view > trend line settings in chart menu
     "trendDetails": TrendDetailsType,
+    // show badge when sort is applied
     "sortIndicator": boolean, 
+    // properties in charts menu
     "properties": chartPropsType,
+    // says that common properties applied in current chart
     "isCommonPropertiesApplied": boolean, 
+    // says that chart/ table need to show in layout
     "toggledView": string | null, 
     "tableProperties": tablePropertiesType[],
     "tableColumnSize": any,
     "setTableProperties": boolean,
     "quadrantDetails": any, 
+    // during interaction get all parent contition
     "parentConditions": GetParentFilterDetailsReturnType,
     "tablePagination": tablePagi,
+    // during interaction get all parent aops details
     "parentAOpsDetails": aopsDetailsType[], 
+    // tells current chart is interacted with which chart
     "interactionChartId": string, 
+    // tells current chart is interacted in all data mode
     "isInteractAllData": boolean, 
+    // child chart list which chart has current chart as parent
     "chartList": ChartWiseReqBodyType[],
+    // says the selected field / selected value / multiInteractField and child chart list which charts has current chart as parent
     "interactWith": interactionDataType, 
+    // says that in parent chart any value is selected or not
     "isHighlight": boolean,
+    // industrial standard in chart menu > helps to add line over trend
     "customTrendData": CustomTrendDataType 
 }
  ```
